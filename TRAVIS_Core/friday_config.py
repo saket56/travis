@@ -1,0 +1,228 @@
+''' 
+    Created By: Rohit Abhishek 
+    Function: For animation purpose only
+'''
+
+import functools
+import multiprocessing
+import os
+import time
+import tkinter as tk
+from tkinter import ttk
+
+import friday_reusable
+import ttkbootstrap as tkb
+import yaml
+from friday_constants import MESSAGE_LOOKUP
+from PIL import Image, ImageTk
+
+
+class FridayHome(tkb.Toplevel):
+    pass
+ 
+
+class FridayConfig(tkb.Toplevel): 
+    ''' Splashscreen class to show animation and load configurations for app to start up '''
+
+    def __init__(self, root, static_folder, config_file, **kwargs): 
+
+        # implement init method of tkinter top level method 
+        tkb.Toplevel.__init__(self, root, **kwargs)
+
+        self.static_folder = static_folder
+        self.config_file = config_file
+
+        # objects to return 
+        # self.workspace_directory = os.path.dirname(os.path.abspath(__file__))
+        self.workspace_directory = None
+        self.config_data = None 
+        self.travis_current_date = None
+        self.travis_start_date = None
+        self.travis_days_used = None
+        self.travis_valid_days = None
+        
+        # mark self to variables 
+        self.root = root 
+        self.elements = {}
+
+        # hide this window 
+        root.withdraw()
+
+        # make window non resizable and without bars 
+        self.overrideredirect(True)
+        self.resizable(False, False)
+
+        # configure row and column 
+        self.columnconfigure(0, weight=1)
+        self.rowconfigure(0, weight=1)
+
+        # Placeholder Vars that can be updated externally to change the status message
+        self.init_str = tkb.StringVar()
+        self.init_str.set('Loading...')
+       
+        # create a gif image object
+        self.gif_file = os.path.join(self.static_folder, 'Travis.gif')
+
+        self.gif_info = Image.open(self.gif_file)     
+        self.gif_frames = self.gif_info.n_frames   
+        self.gif_list = [tkb.PhotoImage(file=self.gif_file, format=f'gif -index {i}') for i in range(self.gif_frames)]
+        self.init_image = self.gif_list[0]
+
+        self.screen = FridayConfig.Screen(self)
+        self._position()
+
+        # Add gif image to the label 
+        self.gif_img_lbl = tkb.Label(self.screen, image=self.init_image, bootstyle="default")
+        self.gif_img_lbl.grid(column=0, row=0, sticky='nswe')
+
+        # Connects to the tk.StringVar so we can updated while the startup process is running
+        self.label = tkb.Label(self.screen, textvariable=self.init_str, anchor='center', bootstyle="default")
+        self.label.grid(column=0, row=1, sticky='nswe')
+
+        self.count = 0
+        self.started = False
+
+    def _position(self, xfact=0.5, yfact=0.5): 
+        ''' create a place where you want to position your widget '''
+
+        # splash window size 
+        splash_width = 300
+        splash_height = 200
+
+        # get the dimension of the window 
+        screen_width = self.winfo_screenwidth()
+        screen_height = self.winfo_screenheight()
+
+        # get the cordinates for splash window 
+        cord_x = (screen_width * xfact) - (splash_width * xfact)
+        cord_y = (screen_height * yfact) - (splash_height * yfact)
+
+        # self.wm_title("TRAVIS IS LOADING")
+        self.geometry('%dx%d+%d+%d' %(splash_width, splash_height, cord_x, cord_y))
+
+
+    def update(self, thread_queue=None):
+        
+        ''' update method to update the parent object and check for any threads ''' 
+
+        # update the splashscreen class 
+        super().update()
+
+        # get the text put on thread queue 
+        if thread_queue and not thread_queue.empty():
+            new_item = thread_queue.get()
+
+            # check the message and perform operations needed
+            if new_item and new_item != self.init_str.get() and self.config_data is None: 
+
+                # get the configuration data 
+                self.config_data = friday_reusable.get_config_data(self.config_file)
+
+                # initialize gui configuration and get workspace default directory
+                gui_config = self.config_data["TravisConfig"]["gui_config"]
+                workspace_directory = gui_config["workspace_directory"]
+
+                # set up workspace directory 
+                self.workspace_directory = friday_reusable.setup_user_workspace(workspace_directory)
+
+                # get travis public key 
+                travis_key = gui_config.get("travis_key")
+                current_date, start_date, days_used, valid_days = friday_reusable.get_travis_tokens(travis_key, 
+                                                                                                    os.path.join(self.static_folder, "travis.dat"))
+                # validate travis keys 
+                self.travis_current_date = current_date
+                self.travis_start_date = start_date
+                self.travis_days_used = days_used
+                self.travis_valid_days = valid_days
+
+            # change the content of the text appearing on the screen
+            if new_item and new_item != self.init_str.get():
+                self.init_str.set(new_item)                
+
+            # check if already started. If not start it and forget it 
+            if not self.started: 
+                self.update_img(self.count)
+                self.started = True
+
+
+    def get_config(self): 
+
+        return self.workspace_directory, self.config_data, self.travis_current_date, self.travis_start_date, self.travis_days_used, self.travis_valid_days
+
+    def update_img(self, count): 
+
+        # update the splashscreen class 
+        super().update()
+
+        self.gif_img_lbl.configure(image=self.gif_list[self.count])
+
+        self.count += 1
+
+        if self.count == self.gif_frames: 
+            self.count = 0
+
+        self.after(100, lambda : self.update_img(self.count))
+
+
+    # declare a static method within the Splashscreen class for calling it without instantiating the object
+    @staticmethod
+    def show(root, function, static_folder=None, config_file=None, callback=None, position=None, **kwargs): 
+        ''' create threads and splash screen for projecting the message '''
+
+        # create a multi processing manager and queue
+        manager = multiprocessing.Manager()
+        thread_queue = manager.Queue()
+
+        # startup the multiprocessing with thread pool
+        process_startup = multiprocessing.Process(target=functools.partial(function, thread_queue=thread_queue))
+        process_startup.start()
+
+        # instantiate splashscreen object
+        splash = FridayConfig(root, static_folder, config_file, **kwargs)
+
+        # check if the threads are still alive. If so update the splash screen with text message
+        while process_startup.is_alive():
+            splash.update(thread_queue)
+
+        pwd, config, travis_current_date, travis_start_date, travis_days_used, travis_valid_days = splash.get_config()
+
+        # terminate the process 
+        process_startup.terminate()
+
+        # remove splashscreen from the display 
+        FridayConfig.remove_splash_screen(splash, root)
+
+        # if callback is set, return callback else nothing
+        return pwd, config, travis_current_date, travis_start_date, travis_days_used, travis_valid_days
+
+
+    # destroy the splash screen 
+    @staticmethod
+    def remove_splash_screen(splash, root):
+        splash.destroy()
+        del splash
+        root.deiconify()        
+
+    # child class for splash screen frame
+    class Screen(tk.Frame):
+
+        # Options screen constructor class
+        def __init__(self, parent):
+            tk.Frame.__init__(self, master=parent)
+            self.grid(column=0, row=0, sticky='nsew')
+            self.columnconfigure(0, weight=1)
+            self.rowconfigure(0, weight=1)
+
+
+def startup_process(thread_queue):
+
+    # Just a fun method to simulate loading processes
+    startup_messages = ["Creating Workspace","Checking Validity","Parsing Configurations","Setting Configurations","Almost Done"]
+    thread_queue.put(f"Please wait....".ljust(27))
+    time.sleep(.5)
+    thread_queue.put(f"Loading Configuration".ljust(27))
+    time.sleep(.5)
+    for n in startup_messages:
+        # print (n)
+        thread_queue.put(n)
+        time.sleep(.5)

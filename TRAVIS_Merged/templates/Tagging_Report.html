@@ -1,0 +1,51 @@
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br><br>
+<h2> {{ summary_report }} </h2>
+<table> 
+    {{ summary_data }}
+</table>
+
+<br><br><br><hr>
+<h2> {{ overall_tagging_summary }} </h2>
+<table> 
+    <tr> 
+        <th><img src={{ overall_summary_img }} ></th>
+    </tr>
+</table>
+
+<br><br><br><hr>
+<h2> {{ all_resource_header }} </h2>
+<table> 
+    {{ all_resource_count }}
+</table>
+
+<br><br><br><hr>
+<h2> {{ mpe_tagging_summary }} </h2>
+<table> 
+    <tr> 
+        <th><img src={{ mpe_tag_summary_img }} ></th>
+    </tr>
+</table>
+
+<br><br><br><hr>
+<h2> {{ mpe_resource_header }} </h2>
+<table> 
+    {{ mpe_resource_count }}
+</table>
+
+<br><br><br><hr>
+<h2> {{ section_header }} </h2>
+<table> 
+    {% for value in table_list %}
+        <tr>
+            {{ value }}
+        </tr>
+    <br><br>
+    {% endfor %}
+</table>
+
+{% endblock %}

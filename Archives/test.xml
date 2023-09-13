@@ -1,0 +1,93 @@
+<KLog MinorVersion="4" MajorVersion="6" FixVersion="4"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://www.nrf-arts.org/IXRetail/namespace/">
+    <Transaction TypeCode="00">
+        <TransactionSourceApplicationTypeCode>ACE</TransactionSourceApplicationTypeCode>
+        <BusinessUnit>
+            <UnitID TypeCode="RetailStore">01100354</UnitID>
+        </BusinessUnit>
+        <WorkstationID>change_this_value</WorkstationID>
+        <SequenceNumber>1</SequenceNumber>
+        <POSLogDateTime>2022-05-04T00:32:22-04:00</POSLogDateTime>
+        <OperatorID OperatorType="Cashier" OperatorPassword="475">61643</OperatorID>
+        <GrossPositive>6.75</GrossPositive>
+        <GrossNegative>3.67</GrossNegative>
+        <RingTime>84</RingTime>
+        <TenderTime>55</TenderTime>
+        <InactiveTime>54</InactiveTime>
+        <IndicatorFlag>
+            <ReservedBit4>true</ReservedBit4>
+            <OperatorSignon>true</OperatorSignon>
+            <TillExchanged>true</TillExchanged>
+            <AdditionalRecords>true</AdditionalRecords>
+            <TenderRemoval>true</TenderRemoval>
+        </IndicatorFlag>
+        <PricingData>0</PricingData>
+        <TransactionReceiptBarcode>76310756852607273769</TransactionReceiptBarcode>
+        <TerminalType>
+            <FuelKiosk>true</FuelKiosk>
+            <RegularTerminalType>true</RegularTerminalType>
+            <Reserved>true</Reserved>
+        </TerminalType>
+        <ReceiptDateTime>2022-05-04T00:32:22</ReceiptDateTime>
+        <ModalityType>PICKUP</ModalityType>
+        <FulfillmentMethod>INSTACARTMARKETPLACE</FulfillmentMethod>
+        <RetailTransaction>
+            <LineItem>
+                <Return ItemType="Stock">
+                    <POSIdentity POSIDType="56">
+                        <POSItemID>51682637206203</POSItemID>
+                    </POSIdentity>
+                    <MerchandiseHierarchy Level="Department">92</MerchandiseHierarchy>
+                    <CouponFamilyNumber>910268</CouponFamilyNumber>
+                    <ExtendedAmount Currency="USD">18.48</ExtendedAmount>
+                    <Quantity UnitOfMeasureCode="EA">7</Quantity>
+                    <UnitRetailPrice>2.64</UnitRetailPrice>
+                    <SaleIndicatorFlag>
+                        <ReservedInd4Bit16>true</ReservedInd4Bit16>
+                        <ReservedInd4Bit28>true</ReservedInd4Bit28>
+                        <ReservedInd4Bit3>true</ReservedInd4Bit3>
+                        <RefundKey>true</RefundKey>
+                    </SaleIndicatorFlag>
+                    <DataEntry>
+                        <UserData1>58285738</UserData1>
+                        <UserData2>6599554</UserData2>
+                        <UserData3>4404</UserData3>
+                        <UserData4>131983999</UserData4>
+                        <UserData5>19919</UserData5>
+                    </DataEntry>
+                </Return>
+                <SequenceNumber>1</SequenceNumber>
+            </LineItem>
+            <LineItem>
+                <Tender TenderType="53" Status="0">
+                    <Amount Currency="USD">7.96</Amount>
+                    <CashingFeeAmount Currency="USD">0</CashingFeeAmount>
+                    <Approval TypeCode="273500">
+                        <Source>H</Source>
+                        <ApprovalType>1</ApprovalType>
+                    </Approval>
+                    <ActionCode>A00</ActionCode>
+                    <ResponseReferenceNumber>59441</ResponseReferenceNumber>
+                    <SequenceNumber>846</SequenceNumber>
+                    <MessageType>8</MessageType>
+                    <ResponseCode>0</ResponseCode>
+                    <ResponseDescription>Approved</ResponseDescription>
+                    <AccountType>2</AccountType>
+                    <OriginalHostResponseCode>00</OriginalHostResponseCode>
+                    <HostResponseIndicator>1</HostResponseIndicator>
+                    <TenderFlag>0</TenderFlag>
+                    <EncryptionData>
+                        <DESKeyID>75212795385864630309</DESKeyID>
+                        <EncyptedAccountNumber>VD4uyAer9t</EncyptedAccountNumber>
+                    </EncryptionData>
+                    <EMVReceiptData>
+                        <ApplicationID>A99676531</ApplicationID>
+                        <TransactionCertificate>VYqxwq9zaP7K43LmYxRX</TransactionCertificate>
+                    </EMVReceiptData>
+                </Tender>
+                <SequenceNumber>1</SequenceNumber>
+            </LineItem>
+        </RetailTransaction>
+    </Transaction>
+</KLog>

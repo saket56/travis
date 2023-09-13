@@ -1,0 +1,847 @@
+# Friday Configuration
+FridayConfig:
+
+  # workspace 
+  workspace_setting: 
+    workspace_dir: ''
+    logging_level: "INFO"         # log level values WARN, ERROR, CRITICAL, DEBUG & NOTSET
+
+  # GUI Settings 
+  gui_settings: 
+    window_color: '#002E5C'
+    header_color: '#D3D3D3'
+    title: "TRAVIS."
+    resizable: true
+    vertical-margin: 150
+    horizontal-margin: 0
+
+  # 2k Display setting
+  display_settings_2k:
+    vertical-spacing-widget: 2
+    horizontal-spacing-widget: 5
+    entry-width: 80
+    entry-borderwidth: 2
+    header_font: 
+      text_color: "black"
+      text_size: 
+        - 'Arial'
+        - 10
+        - 'bold'
+    header2_font:
+      text_color: "white"
+      text_size: 
+        - 'Helvetica'
+        - 10
+        - 'bold'
+        - 'underline'
+    section_font: 
+      text_color: "white"
+      text_size: 
+        - 'Helvetica'
+        - 9
+        - 'bold'
+        - 'roman'
+    label_font: 
+      text_color: "white"
+      text_size: 
+        - 'Helvetica'
+        - 7
+        - 'bold'
+    entry_font:
+      text_color: "black"
+      text_size:
+        - 'Helvetica'
+        - 7
+
+  # 4k Display setting
+  display_settings_4k:
+    vertical-spacing-widget: 3
+    horizontal-spacing-widget: 10
+    entry-width: 100
+    entry-borderwidth: 2
+    header_font: 
+      text_color: "black"
+      text_size: 
+        - 'Arial'
+        - 10
+        - 'bold'
+    header2_font:
+      text_color: "white"
+      text_size: 
+        - 'Verdana'
+        - 10
+        - 'bold'
+        - 'underline'
+    section_font: 
+      text_color: "white"
+      text_size: 
+        - 'Verdana'
+        - 9
+        - 'bold'
+        - 'roman'
+    label_font: 
+      text_color: "white"
+      text_size: 
+        - 'Verdana'
+        - 7
+        - 'bold'
+    entry_font:
+      text_color: "black"
+      text_size:
+        - 'Verdana'
+        - 7
+
+  # entry box setting 
+  entry_settings:
+    app_entry_box:
+      box_color: 'white'
+      text_color: 'black'
+    env_entry_box:
+      box_color: 'white'
+      text_color: 'black'
+    str_entry_box: 
+      box_color: 'white'
+      text_color: 'black'
+    num_entry_box:
+      box_color: 'white'
+      text_color: 'blue'
+    list_entry_box:
+      box_color: '#FFEDCD'
+      text_color: 'black'
+
+  # image data 
+  image_settings:
+    submit_button: "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"
+    deloitte_logo: "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"
+    travis_logo: "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"
+    open_button: "iVBORw0KGgoAAAANSUhEUgAAAA0AAAAMCAYAAAC5tzfZAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAAFiUAABYlAUlSJPAAAAE2SURBVChTlZBPL8NwGMe/v99WPewsMwdiLhr/ZjS4EAfcyLj4e0GQEG9hG0a8iV7xIvoadA4212akJAvSde2m7U9XPYgg9Tk9efI83+eThxSLRVatVuE4DkRRRCwWg2EY0DQNeq2GZ+0JsizjVlFwWihgfHICREyPsexJHse5HEZTaXT1dOPdttGwLOi6jj5BwNrKKl7eXnF9eYXM8hLI0cEhm52fQ91LTyZ7EW3jEI/HkUgk8BVVVSFJEh4rDyCZhUXW3tmB4cEBDKVGYBp1uK7r6zLG/IUox3nDFSg3Cu7LZZCZqWmW9dTuSiX/GiHEH/wOz/MQ+gVcnJ0DO1vbXmB49nf3GLUaVpAVDtM0QX+W+Z2WPg3qf0G91aAMD8XnV0MT8Y6QzfUNZjebLdmg/RcMlEbwAZF6nm9ALkMyAAAAAElFTkSuQmCC"
+
+
+# Compare File Metadata 
+COMPARE_FILE_METADATA:
+  Application: "abcd"
+  Environment: "Dev"
+
+  FILE_COMPARE:
+    description: "Get File Statistics, Hashcode and Compare"
+    BaseConfig:
+      description: "Base File Details"
+      Base_Location: 'C:\Users\roabhishek\Desktop\Test\Test_Folder\all'
+      Base_Files:
+        - '*.csv'
+
+    ReleaseConfig:
+      description: "Release File Details"
+      Release_Location: 'C:\Users\roabhishek\Desktop\Test\Test_Folder'
+      Release_Files: 
+        - '*.csv'
+
+    CompareConfig: 
+      description: "Compare Configurations"
+      File_Keys: "File_Name"
+      Include_Matching_Records: false
+      Processor_Limit: 15
+      
+    OutputConfig: 
+      description: "Output Configurations"
+      Output_Location: ""
+      Output_File_Delimiter: '|'
+      Output_File_Code_Page: 'utf-8'
+      Output_Generate_Summary: true
+
+
+# Stream json data and compare
+JSON_COMPARE:
+  Application: "Json Compare"
+  Environment: "UAT"
+
+  JSON_Stream_Compare:
+    description: "Compare Sorted JSON Files Sequentially"
+    BaseConfig:
+      description: "Base File Details"
+      Base_Location: 'C:\Users\roabhishek\Desktop\Test\HCSC'
+      Base_Files: 
+        - 'new 1_raw.json'
+      Base_File_Code_Page: 'utf-8'
+    
+    ReleaseConfig:
+      description: "Release File Details"
+      Release_Location: 'C:\Users\roabhishek\Desktop\Test\HCSC'
+      Release_Files: 
+        - 'new 2_raw.json'    
+      Release_File_Code_Page: 'utf-8'
+
+    CompareConfig: 
+      description: "Compare Configurations"
+      File_Keys: 
+        - '_id.$oid'
+      Parent_Child_Separator: "."
+      Skip_Fields:
+        - ""
+      Case_Sensitive_Compare: true
+      Include_Matching_Records: false
+      Processor_Limit: 2
+      Batch_Size: 10000
+      
+    OutputConfig: 
+      description: "Output Configurations"
+      Output_Location: ""
+      Output_File_Delimiter: '|'
+      Output_File_Code_Page: 'utf-8'
+      Output_Generate_Summary: true
+      Output_Store_Base_Release: false
+      
+
+  JSON_Dynamic_Compare:
+    description: "Compare Unsorted JSON Files Dynamically"
+    BaseConfig:
+      description: "Base File Details"
+      Base_Location: 'C:\Users\roabhishek\Desktop\Test\json_files'
+      Base_Files : 
+        - '*.json'
+      Base_File_Code_Page: 'utf-8'
+    
+    ReleaseConfig:
+      description: "Release File Details"
+      Release_Location: 'C:\Users\roabhishek\Desktop\Test\json_files'
+      Release_Files: 
+        - '*.json'    
+      Release_File_Code_Page: 'utf-8'
+
+    CompareConfig: 
+      description: "Compare Configurations"
+      File_Keys: 
+        - '_id.$oid'
+      Parent_Child_Separator: "."
+      Skip_Fields:
+        - ""
+      Case_Sensitive_Compare: true
+      Include_Matching_Records: false
+      Processor_Limit: 15
+      Batch_Size: 10000
+      
+    OutputConfig: 
+      description: "Output Configurations"
+      Output_Location: ""
+      Output_File_Delimiter: '|'
+      Output_File_Code_Page: 'utf-8'
+      Output_Generate_Summary: true
+
+
+# Manipulate JSON Files 
+JSON_MANIPULATION:
+  Application: "Json_Manipulation"
+  Environment: "DEV"
+  
+  Convert_JSON_To_CSV:
+    description: "Flatten JSON file to CSV"
+    InputConfig:
+      description: 'Input File Details'
+      Input_Location : 'C:\Users\roabhishek\Desktop\Test'
+      Input_Files: 
+        - 'covid_test.json'
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_Child_Separator: "."
+      Output_File_Code_Page: 'utf-8'
+
+    RunConfig:
+      description: "Execution Settings"
+      Thread_Limit: 10
+
+
+  Split_JSON_File: 
+    description: "Slice Huge Json File into smaller sub-files"
+    InputConfig: 
+      description: "Input Json File Details"
+      Input_Location: 'D:\Data\Data'
+      Input_Files:  
+        - 'PTB_Source.json'
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output Json File Details"
+      Output_Location: ""
+      Output_File_Code_Page: 'utf-8'
+
+    RunConfig:
+      description: "Execution Settings"
+      Thread_Limit: 10
+      Batch_Size: 200000
+
+  Merge_JSON_Load_Files:
+    description : "Combine Multiple smaller JSON File(s) to one after loading to memory"
+    InputConfig: 
+      description: "Input Json File Details"
+      Input_Location: 'C:\Users\roabhishek\Documents\Travis\20230406142042\Split_JSON_File\IOS_UAT'
+      Input_Files:  
+        - '*.json'
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output Json File Details"
+      Output_Location: ""
+      Output_File_Code_Page: 'utf-8'
+
+  Merge_JSON_Stream_Files:
+    description : "Combine Multiple JSON File(s) to one\n\n!!Caution - May change format of JSON!!"
+    InputConfig: 
+      description: "Input Json File Details"
+      Input_Location: 'C:\Users\roabhishek\Documents\Travis\20230406142042\Split_JSON_File\IOS_UAT'
+      Input_Files:  
+        - '*.json'
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output Json File Details"
+      Output_Location: ""
+      Output_File_Code_Page: 'utf-8'
+
+
+# Csv Compare 
+CSV_COMPARE:
+  Application: "Csv Compare"
+  Environment: "PROD"
+
+  CSV_Stream_Compare: 
+    description: "Compare Sorted CSV File Sequentially"
+    BaseConfig:
+      description: "Base File Details"
+      Base_Location: 'C:\Users\roabhishek\Desktop\Test\AllFiles'
+      Base_Files: 
+        - 'cities.csv'
+      Base_File_Delimiter: ','
+      Base_File_Code_Page: 'utf-8'
+      
+    ReleaseConfig:
+      description: "Release File Details"
+      Release_Location: 'C:\Users\roabhishek\Desktop\Test\AllFiles' 
+      Release_Files: 
+        - 'cities_release.csv'    
+      Release_File_Delimiter: ','
+      Release_File_Code_Page: 'utf-8'
+
+    CompareConfig: 
+      description: "Compare Configurations"
+      File_Keys: 
+        - 'LatD'
+        - 'LatM' 
+        - 'LatS' 
+        - 'LonD' 
+        - 'LonM' 
+        - 'LonS' 
+
+      Skip_Fields:
+        - ""
+      Case_Sensitive_Compare: true
+      Include_Matching_Records: false
+      Processor_Limit: 10
+      Batch_Size: 50000
+
+    OutputConfig: 
+      description: "Output Configurations"
+      Output_Location: ""
+      Output_File_Delimiter: '|'
+      Output_File_Code_Page: 'utf-8'
+      Output_Generate_Summary: true
+      Output_Store_Base_Release: False
+
+  CSV_Dynamic_Compare:
+    description: "Compare Unsorted CSV file Dynamically"
+    BaseConfig:
+      description: "Base File Details"
+      Base_Location: 'C:\Users\roabhishek\Desktop\Test\AllFiles'
+      Base_Files: 
+        - 'cities.csv'
+      Base_File_Delimiter: ','
+      Base_File_Code_Page: 'utf-8'
+      
+    ReleaseConfig:
+      description: "Release File Details"
+      Release_Location: 'C:\Users\roabhishek\Desktop\Test\AllFiles' 
+      Release_Files: 
+        - 'cities_release.csv'    
+      Release_File_Delimiter: ','
+      Release_File_Code_Page: 'utf-8'
+
+    CompareConfig: 
+      description: "Compare Configurations"
+      File_Keys: 
+        - 'LatD'
+        - 'LatM' 
+        - 'LatS' 
+        - 'LonD' 
+        - 'LonM' 
+        - 'LonS' 
+
+      Skip_Fields:
+        - ""
+      Case_Sensitive_Compare: true
+      Include_Matching_Records: false
+      Processor_Limit: 10
+      Batch_Size: 50000
+
+    OutputConfig: 
+      description: "Output Configurations"
+      Output_Location: ""
+      Output_File_Delimiter: '|'
+      Output_File_Code_Page: 'utf-8'
+      Output_Generate_Summary: true
+
+
+# CSV Tokenization
+CSV_TOKENIZATION:
+  Application: "Csv Tokenization"
+  Environment: "PREPROD"
+
+  CSV_Base64_Tokenization:
+    description: "Tokenization of CSV File in base64 format"
+    InputConfig:
+      description: 'Input File Details'
+      Input_Location:  'D:\Data\Data'
+      Input_Files: 
+        - 'cities.csv'
+      Input_Delimiter: ","
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'
+
+    TokenConfig:
+      description: "Encryption Settings"
+      Target_Columns: 
+        - 'LatD'
+        - 'City'
+        - 'State'
+      Condition: "'State' eq 'OH' or 'State' eq 'SD'"
+      Thread_Limit: 10
+
+  CSV_Base64_Detokenization:
+    description: "Detokenize CSV File in base64 format"
+    InputConfig:
+      description: 'Input File Details'
+      Input_Location:  'D:\Data\Data'
+      Input_Files: 
+        - 'cities.csv'
+      Input_Delimiter: ","
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'
+
+    TokenConfig:
+      description: "Encryption Settings"
+      Target_Columns: 
+        - 'City'
+      Condition: "'State' eq 'OH' or 'State' eq 'SD'"
+      Thread_Limit: 10      
+
+# CSV Manipulation 
+CSV_MANIPULATION:
+  Application: "Csv Manipulation"
+  Environment: "SIT"
+
+  # Horizontal CSV slice
+  CSV_Horizontal_Slice:
+    description: "Split CSV Based on Number of Records"
+    InputConfig: 
+      description: "Input File Details"
+      Input_Location: 'D:\Data\Data'
+      Input_Files: 
+        - 'Global_Mobility_Report.csv'
+      Input_Delimiter:  ","
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page : 'utf-8'
+
+    SplitConfig:
+      description: "Horizontal Split Settings"
+      Thread_Limit: 10
+      Batch_Size: 1000
+      Input_Has_Header: true
+      Output_Need_Header: true
+
+
+  # Slice csv vertically and change header 
+  CSV_Vertical_Slice:
+    description : "Slice CSV File at Column Level or Rename Column Name"
+    InputConfig: 
+      description: "Input File Details"
+      Input_Location: 'D:\Data\Data'
+      Input_Files: 
+        - 'Cities.csv'
+      Input_Delimiter:  ","
+      Input_File_Code_Page: 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'  
+
+    SplitConfig:
+      description: "Vertical Split Settings"
+      Thread_Limit: 10 
+      Header_Mapping: 
+        - 'LatD | Latitude_Degree'
+        - 'LatM | Latitude_Minutes'
+        - 'LatS | Latitude_Seconds'      
+      Output_Only_Mapped: false      
+
+
+  # slice csv with conditions
+  CSV_Conditional_Slice:
+    description : "Conditional Slice of CSV File"
+    InputConfig: 
+      description: "Input File Details"
+      Input_Location: 'D:\Data\Data'
+      Input_Files: 
+        - 'LatD'
+        - 'City'
+        - 'State'
+      Input_Delimiter:  ","
+      Input_File_Code_Page : 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page : 'utf-8'
+
+    SplitConfig:
+      description: "Conditional Split Settings"
+      Thread_Limit: 10
+      Output_Columns:
+        - 'City'
+      Output_Condition: "'State' eq 'OH' or 'State' eq 'SD'"
+
+
+  # merge csv files together
+  CSV_Merge_Files:
+    description : "Conditional Slice of CSV File"
+    InputConfig: 
+      description: "Input File Details"
+      Input_Location: 'D:\Data\Data'
+      Input_Files: 
+        - '*.csv'
+      Input_Delimiter:  ","
+      Input_File_Code_Page : 'utf-8'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page : 'utf-8'       
+
+
+# Migration Utilities 
+MIGRATION_UTILITIES:
+  Application: "Migration Utilities"
+  Environment: "SIT"
+
+  AWS_Cyberark_Refresh:
+    description: "Refresh AWS Access Key & Token"
+
+    InputDetails: 
+      description: "Input Details"
+      HA_User_Id: ""
+      HA_Password: ""
+      Account_Arn_Profiles:
+        - "arn:aws:iam::232861963405:role/ADFS-Ops-Admin | legacylz"
+        - "arn:aws:iam::738234568511:role/antm-cloudops | newlz"
+        - "arn:aws:iam::844877126926:role/antm-cloudops | testlz"
+
+    OutputDetails:
+      description: "Output Details"
+      Output_Location: ""
+      Output_File_Code_Page: 'utf-8'
+
+
+  AWS_Tagging_Extract:
+    description: "Extract Tag Details of AWS Resources"
+
+    InputDetails:
+      description: "Input Details"
+      Account_File: '\\ntfs07\SHARED\EH Data Migration\Account_List_Migration_Team\Script_Input_Sheet.csv'
+      Resource_List: 
+        - "ec2:image"
+        - "ec2:instance"
+        - "ec2:network-interface"
+        - "ec2:snapshot"
+        - "ec2:security-group"
+        - "ec2:volume"
+        - "elasticloadbalancing"
+        - "datasync"
+        - "s3"
+        - "rds"
+        - "kms"
+
+      Mandatory_Tags:
+        - "apm-id"
+        - "application-name"
+        - "app-servicenow-group"
+        - "app-support-dl"
+        - "aws-migration-project-id"
+        - "business-division"
+        - "company"
+        - "compliance"
+        - "costcenter"
+        - "environment"
+        - "PatchGroup"
+        - "PatchWindow"
+        - "workspace"
+
+      Other_Tags:
+        - "db-prov-team"
+        - "anthem_service"
+        - "app-business-owner"
+        - "application"
+        - "application_dl"
+        - "application_tag1"
+        - "application_tag2"
+        - "application_tag3"
+        - "application_tag4"
+        - "application_tag5"
+        - "aws_account_name"
+        - "barometer-it"
+        - "barometer-it-num"
+        - "bu"
+        - "env"
+        - "financial-internal-data"
+        - "financial-regulatory"
+        - "it-department"
+        - "layer"
+        - "legal-data"
+        - "map-migrated-app"
+        - "owner-department"
+        - "privacy-data"
+        - "resource-type"
+        - "schedule-window"
+
+    OutputDetails:
+      description: "Output Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'
+
+    RunDetails:
+      description: "Execution Configuration"
+      Get_Snapshot_Details: true
+      Retain_Temp_Files: true
+      Create_Excel_Report: true
+      Thread_Limit: 10 
+      Account_Random_Samples: 0
+      Send_Email: true
+      Email_List: 
+        - "roabhishek@deloitte.com"
+
+
+
+# Compare Mongo DB Statistics 
+MONGO_UTILITIES:
+  Application: "Mongo Utilities"
+  Environment: "SIT"
+
+
+  Mongo_Database_Statistics:
+    description: "Collect Mongo Database Collections Statistic"
+
+    DatabaseDetails: 
+      description: "Mongo Database Details"
+      Host_Name: ""
+      Host_Port: 37043
+      User: ""
+      Password: ""
+      Database: ""
+      Auth_Source: "admin"
+      Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'          
+      
+    MongoConfig:
+      description: "Collection Details"
+      Collection_List: 
+        - "transactionLogs"
+      Processor_Limit: 10
+      Generate_Scripts: true
+
+
+  Mongo_Data_Dump:
+    description: "Connect to Database and Dump Collection from Many Collections"
+
+    DatabaseDetails: 
+      description: "Mongo Database Details"
+      Host_Name: ""
+      Host_Port: 37043
+      User: ""
+      Password: ""
+      Database: ""
+      Auth_Source: "admin"
+      Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'
+
+    MongoConfig:
+      description: "Data Dump Option"
+      Collection_List: 
+        - "transactionLogs"
+      Get_Dump_In_JSON: true 
+      Canonical_Mode: false
+      JSON_In_Array: true
+      Processor_Limit: 10
+
+     
+  Mongo_Data_Insert:
+    description: "Insert JSON In Array to a Collection"
+
+    DatabaseDetails: 
+      description: "Mongo Database Details"
+      Host_Name: ""
+      Host_Port: 37043
+      User: ""
+      Password: ""
+      Database: ""
+      Auth_Source: "admin"
+      Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+      Collection_Name: "transactionLogs"
+
+    OutputConfig:
+      description: "Output Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'          
+
+    MongoConfig:
+      description: "JSON Files for Data Insert Into Collections"
+      Input_Location: 'D:\Travis_logs_results\Reference_Collections\IOS_UAT_Pramod'
+      Input_Files: 
+        - '4.json'
+      Input_File_Code_Page: 'utf-8'
+      Processor_Limit: 5
+      Generate_Statistics: true
+
+
+  Mongo_Data_Import:
+    description: "Import JSON In Array to a Collection"
+
+    DatabaseDetails: 
+      description: "Mongo Database Details"
+      Host_Name: ""
+      Host_Port: 37043
+      User: ""
+      Password: ""
+      Database: ""
+      Auth_Source: "admin"
+      Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+      Collection_Name: "transactionLogs"
+
+    OutputConfig:
+      description: "Output Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'          
+
+    MongoConfig:
+      description: "JSON Files for Data Insert Into Collections"
+      Input_Location: 'D:\Travis_logs_results\Reference_Collections\IOS_UAT_Pramod'
+      Input_Files: 
+        - '4.json'
+      Input_File_Code_Page: 'utf-8'
+      Processor_Limit: 5
+      Generate_Statistics: true
+
+
+  Mongo_Source_Target_Statistics:
+    description: "Connect to Source & Target Mongodb to get Statistics"
+    
+    BaseDetails:
+      description: "Source Mongo DB Details"
+      Base_Host_Name: ""
+      Base_Host_Port: 37043
+      Base_User: "srcExtractRO"
+      Base_Password: ""
+      Base_Database: ""
+      Base_Auth_Source: ""
+      Base_Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+
+    ReleaseDetails:
+      description: "Target Mongo DB Details"
+      Release_Host_Name: ""
+      Release_Host_Port: 37043
+      Release_User: ""
+      Release_Password: ""
+      Release_Database: ""
+      Release_Auth_Source: "admin"
+      Release_Tls_CA_File: 'D:\TRAVIS_Development\travis_repo-master@22edc5d10fb\TRAVIS_WIP\certificates\root.pem'
+
+    MongoConfig: 
+      description: "Collections Information"
+      Collection_List: 
+        - "Calculation_Logic"
+        - "CommissionsPreGenerateTins"
+        - "CommissionSummaryInsight" 
+        - "fs.files"
+        - "CommissionsDetails" 
+        - "CommissionsNotifications"
+        - "CommissionsStatement" 
+        - "CommissionsStatementProducer" 
+        - "CommissionsSummary"
+      Processor_Limit: 10
+      Generate_Summary : true
+
+    OutputConfig:
+      description : "Output File Details"
+      Output_Location : ""
+      Output_Delimiter : ","
+      Output_File_Code_Page : 'utf-8'
+
+
+TEXT_MINING:
+  Application: "Text_Mining"
+  Environment: "SIT"
+
+  Predict_PHI_Fields:
+    description: "Read Input field file and predict if PHI field"
+
+    InputDetails: 
+      description: "Input Details"
+      Input_Location: 'C:\Users\roabhishek\Desktop\Test\PHI_Prediction'
+      Input_Files: 
+        - 'field_list.txt'
+
+    OutputConfig:
+      description: "Output File Details"
+      Output_Location: ""
+      Output_Delimiter: ","
+      Output_File_Code_Page: 'utf-8'          
+      
+    MiningConfig:
+      description: "Provide Mining Parameters"
+      Learning_Dataset: 
+      Feedback_Dataset: 
+      
+        - "transactionLogs"
+      Processor_Limit: 10
+      Generate_Scripts: true  

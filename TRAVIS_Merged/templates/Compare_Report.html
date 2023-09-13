@@ -1,0 +1,116 @@
+
+
+{% extends 'base.html' %}
+
+{% block body %}
+
+<br><br>
+<h2> {{ section_header_0 }} </h2>
+<table>
+    <tr>
+        {% for column in column_name_0 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in summary_data_0 %}
+        <tr>
+            {% for item in row %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<br><br><br><br>
+<h2> {{ section_header_1 }} </h2>
+<table>
+    <tr>
+        {% for column in column_name_1 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in summary_data_1 %}
+        <tr>
+            {% for item in row %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<br><br><br><br>
+<h2> {{ section_header_2 }} </h2>
+<table>
+    <tr>
+        {% for column in column_name_2 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in summary_data_2 %}
+        <tr>
+            {% for item in row %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<br><br><br><br>
+<h2> {{ section_header_3 }} </h2>
+<table>
+    <tr>
+        {% for column in column_name_3 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+    {% for row in summary_data_3 %}
+        <tr>
+            {% for item in row %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}
+</table>
+
+<br><br><br><br>
+<h2> {{ section_header_4 }} </h2> 
+<table>
+    <tr>
+        {% for column in column_name_4 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+
+
+    {% for value in summary_data_4 %}
+        <tr>
+            {% for item in value %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}    
+
+</table>		
+
+<br><br><br><br>
+<h2> {{ section_header_5 }} </h2> 
+
+<table>
+    <tr>
+        {% for column in column_name_5 %}
+            <th>{{column}}</th>
+        {% endfor %}
+    </tr>
+
+
+    {% for value in summary_data_5 %}
+        <tr>
+            {% for item in value %}
+                <td>{{item}}</td>
+            {% endfor %}
+        </tr>
+    {% endfor %}    
+
+</table>		
+
+{% endblock %}

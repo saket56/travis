@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block title %}Index{% endblock %}
+
+{% block body %}
+{% for message in get_flashed_messages() %}
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+    {{ message }}
+    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>
+{% endfor %}
+
+
+<nav style="--bs-breadcrumb-divider: '>';" aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="/">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ child_key }} </li>
+    </ol>
+</nav>
+
+
+<div class="shadow p-3 mb-5 bg-body-tertiary rounded">
+
+    <h1> {{ parent_key.replace("_", " ")|title }} </h1>
+    <h5> {{ child_key.replace("_", " ")|title }} </h5>
+    <hr>
+    <h6> Currently this feature is not supported </h6>
+
+
+</div>
+
+{% endblock %}

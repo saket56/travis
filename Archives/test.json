@@ -1,0 +1,70 @@
+{
+    "dltNumber": "14103",
+    "fulfillmentMethod": "INSTACARTMARKETPLACE",
+    "item": [
+        {
+            "couponFamilyNumber": "910268",
+            "departmentId": "92",
+            "extendedItemAmount": "18.48 USD",
+            "gtin": "51682637206203",
+            "itemEntryType": "SCANNED_ITEM_CODE",
+            "itemSequenceNumber": "1",
+            "itemTypeCode": "SALE",
+            "markdownFlag": false,
+            "miscFlag": false,
+            "quantity": {
+                "eachCount": 7,
+                "uomQuantity": "7 EA"
+            },
+            "saleQualifier": [
+                "refundKey",
+                "reservedInd4Bit16",
+                "reservedInd4Bit28",
+                "reservedInd4Bit3"
+            ]
+        }
+    ],
+    "locationType": "RetailStore",
+    "modality": "PICKUP",
+    "operatorId": "61643",
+    "payment": [
+        {
+            "accountType": "CHECKING_ACCOUNT_OR_EBT_CASH",
+            "actionCode": "APPROVED",
+            "approvalCode": "273500",
+            "approvalCodeSource": "APPROVAL_FROM_HOST",
+            "approvalTypeCode": "SALE_APPROVED_BY_HOST_(ONLINE)",
+            "cashingFeeAmount": "0.00 USD",
+            "emvReceiptData": {
+                "applicationId": "A99676531",
+                "transactionCertificate": "VYqxwq9zaP7K43LmYxRX"
+            },
+            "hostResponseIndicator": "1",
+            "messageType": "EBT_RESPONSE",
+            "originalHostResponseCode": "00",
+            "paymentAmount": "7.96 USD",
+            "paymentFlag": "0",
+            "paymentStatus": "0",
+            "paymentType": "CASH",
+            "responseCode": "0",
+            "responseDescription": "Approved",
+            "responseReferenceNumber": "59441",
+            "sequenceNumber": "846"
+        }
+    ],
+    "terminalType": [
+        "REGULAR_TERMINAL_TYPE",
+        "FUEL_KIOSK",
+        "RESERVED"
+    ],
+    "transactionDateTimeLocal": "2023-06-03T03:22:55-04:00",
+    "transactionDateTimeUtc": {
+        "timezone": "Central Time",
+        "value": "2023-06-03T07:22:55.00Z"
+    },
+    "transactionId": "f1a0e7dd-3e61-371b-ba10-a6a8ea88bb23",
+    "transactionSourceName": "ACE",
+    "transactionType": "CHECKOUT",
+    "workstationId": "checkout_dem__0",
+    "workstationTransactionNumber": "1"
+}
